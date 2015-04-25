@@ -1,3 +1,5 @@
 .venv/
+app/static/.webassets-cache
+app/static/dist/
 
 *.py[cod]
