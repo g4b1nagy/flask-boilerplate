@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from flask import render_template
+from flask import flash, render_template
 
 from app import app
 from forms import MyForm
@@ -10,6 +10,7 @@ from forms import MyForm
 def index():
   form = MyForm()
   if form.validate_on_submit():
+    flash('Hey look everyone, he made it!', 'success')
     return render_template('index.html', name=form.name.data)
   return render_template('index.html', form=form)
 
