@@ -5,8 +5,8 @@
     <h1>Please log in</h1>
   </div>
   <p class="lead">
-    <a class="btn btn-primary" href="#" role="button">Facebook</a>
-    <a class="btn btn-danger" href="#" role="button">Google+</a>
-    <a class="btn btn-info" href="#" role="button">Twitter</a>
+    <a class="btn btn-primary" href="{{ url_for('social_login', provider_name='facebook') }}" role="button">Facebook</a>
+    <a class="btn btn-danger" href="{{ url_for('social_login', provider_name='google') }}" role="button">Google+</a>
+    <a class="btn btn-info" href="{{ url_for('social_login', provider_name='twitter') }}" role="button">Twitter</a>
   </p>
 {% endblock %}

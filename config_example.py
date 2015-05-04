@@ -1,5 +1,31 @@
 # -*- coding: utf-8 -*-
 
+from authomatic.providers import oauth1, oauth2
+
+# =========================================================================
+# Authomatic
+# =========================================================================
+
+AUTHOMATIC = {
+  'facebook': {
+    'class_': oauth2.Facebook,
+    'consumer_key': '',
+    'consumer_secret': '',
+    'scope': ['public_profile', 'email'],
+  },
+  'google': {
+    'class_': oauth2.Google,
+    'consumer_key': '',
+    'consumer_secret': '',
+    'scope': ['profile', 'email'],
+  },
+  'twitter': {
+    'class_': oauth1.Twitter,
+    'consumer_key': '',
+    'consumer_secret': '',
+  },
+}
+
 # =========================================================================
 # SQLAlchemy
 # =========================================================================

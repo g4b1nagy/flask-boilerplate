@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from flask.ext.assets import Bundle
+
 
 less = Bundle(
   'bootstrap-less/bootstrap.less',

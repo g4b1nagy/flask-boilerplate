@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from authomatic import Authomatic
 from flask import Flask
 from flask.ext.assets import Environment
 from flask.ext.login import LoginManager
@@ -15,6 +16,9 @@ app.config.from_object('config')
 assets = Environment(app)
 assets.register('css', css)
 assets.register('js', js)
+
+
+authomatic = Authomatic(app.config['AUTHOMATIC'], app.config['SECRET_KEY'])
 
 
 db = SQLAlchemy(app)

@@ -6,4 +6,5 @@ from wtforms.validators import DataRequired
 
 
 class MyForm(Form):
-  name = StringField('Name', description='Name', validators=[DataRequired(message="You're not listening, are you?")])
+  name = StringField('Name', description='Name',
+    validators=[DataRequired(message="You're not listening, are you?")])

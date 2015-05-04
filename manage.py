@@ -22,7 +22,7 @@ def db_create():
 
 @manager.command
 def db_seed():
-  user = User('Gabi Nagy', 'gabi@helpfulsheep.com')
+  user = User('12345', 'Gabi', 'Nagy', 'gabi@helpfulsheep.com', 'http://helpfulsheep.com/assets/helpful-sheep.png', 'http://helpfulsheep.com/')
   db.session.add(user)
   db.session.commit()
 
