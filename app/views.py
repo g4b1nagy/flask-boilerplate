@@ -39,8 +39,8 @@ def social_login(provider_name):
   if result:
     if result.user:
       result.user.update()
-      user_id = '{}_{}'.format(result.provider.name, result.user.id)
-      user = User.query.filter_by(id=user_id).first()
+      social_id = '{}_{}'.format(result.provider.name, result.user.id)
+      user = User.query.filter_by(social_id=social_id).first()
       if user is None:
         # fix oauth inconsistencies
         if result.provider.name == 'facebook':
@@ -48,8 +48,14 @@ def social_login(provider_name):
         elif result.provider.name == 'twitter':
           result.user.first_name = result.user.name.split(' ')[0]
           result.user.last_name = result.user.name.split(' ')[1]
-        user = User(user_id, result.user.first_name, result.user.last_name,
-                result.user.email, result.user.picture, result.user.link)
+        user = User(
+          first_name=result.user.first_name,
+          last_name=result.user.last_name,
+          email=result.user.email,
+          picture_url=result.user.picture,
+          social_id=social_id,
+          social_profile_url=result.user.link,
+        )
         db.session.add(user)
         db.session.commit()
       login_user(user, remember=True)
