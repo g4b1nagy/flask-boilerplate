@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from authomatic.adapters import WerkzeugAdapter
-from flask import flash, make_response, redirect, render_template, request, url_for
+from flask import flash, make_response, redirect, render_template, request, session, url_for
 from flask.ext.login import login_required, login_user, logout_user
 
 from app import app, authomatic, db, login_manager
@@ -21,6 +21,7 @@ def load_user(id):
 @login_manager.unauthorized_handler
 def unauthorized():
   flash('You need to log in first.', 'warning')
+  session['next_url'] = request.url
   return redirect(url_for('login', next=request.url))
 
 # =========================================================================
@@ -62,7 +63,7 @@ def social_login(provider_name):
     elif result.error:
       flash(result.error.message, 'danger')
       return redirect(url_for('login'))
-    return redirect(url_for('secret'))
+    return redirect(session.pop('next_url', url_for('secret')))
   return response
 
 
