@@ -48,7 +48,10 @@ def social_login(provider_name):
           result.user.picture = result.user.picture.replace('None', result.user.id)
         elif result.provider.name == 'twitter':
           result.user.first_name = result.user.name.split(' ')[0]
-          result.user.last_name = result.user.name.split(' ')[1]
+          try:
+            result.user.last_name = result.user.name.split(' ')[1]
+          except:
+            result.user.last_name = ''
         user = User(
           first_name=result.user.first_name,
           last_name=result.user.last_name,
