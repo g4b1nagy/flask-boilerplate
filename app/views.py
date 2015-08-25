@@ -5,8 +5,8 @@ from flask import flash, make_response, redirect, render_template, request, sess
 from flask.ext.login import login_required, login_user, logout_user
 
 from app import app, authomatic, db, login_manager
-from forms import MyForm
-from models import User
+from .forms import MyForm
+from .models import User
 
 # =========================================================================
 # Flask-Login

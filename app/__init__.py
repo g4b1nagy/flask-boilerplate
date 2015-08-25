@@ -6,7 +6,7 @@ from flask.ext.assets import Environment
 from flask.ext.login import LoginManager
 from flask.ext.sqlalchemy import SQLAlchemy
 
-from assets import css, js
+from .assets import css, js
 
 
 app = Flask(__name__)

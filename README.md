@@ -21,8 +21,10 @@ Specifically, flask-boilerplate comes with:
 
 * cd to a comfy location
 * git clone git@github.com:g4b1nagy/flask-boilerplate.git
+* sudo npm install -g less
+* sudo ln -s /usr/bin/nodejs /usr/bin/node  # in case you get "node: command not found"
 * cd flask-boilerplate/
-* virtualenv .venv
+* virtualenv -p $(which python3) .venv
 * source .venv/bin/activate
 * pip install -r requirements.txt
 * cp config_example.py config.py
