@@ -25,5 +25,5 @@ class User(db.Model, UserMixin):
   def __repr__(self):
     return 'User #{} - {} {}'.format(self.id, self.first_name, self.last_name)
 
-  def full_name(self):
+  def name(self):
     return '{} {}'.format(self.first_name, self.last_name)
