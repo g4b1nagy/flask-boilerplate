@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}TITLE{% endblock %}
 {% block content %}
-  <div class="page-header">
-    <h1>Please log in</h1>
-  </div>
-  <p class="lead">
-    <a class="btn btn-primary" href="{{ url_for('social_login', provider_name='facebook') }}" role="button">Facebook</a>
-    <a class="btn btn-danger" href="{{ url_for('social_login', provider_name='google') }}" role="button">Google+</a>
-    <a class="btn btn-info" href="{{ url_for('social_login', provider_name='twitter') }}" role="button">Twitter</a>
-  </p>
+    <div class="page-header">
+        <h1>Please log in</h1>
+    </div>
+    <p class="lead">
+        <a class="btn btn-primary" href="{{ url_for('social_login', provider_name='facebook') }}" role="button">Facebook</a>
+        <a class="btn btn-danger" href="{{ url_for('social_login', provider_name='google') }}" role="button">Google+</a>
+        <a class="btn btn-info" href="{{ url_for('social_login', provider_name='twitter') }}" role="button">Twitter</a>
+    </p>
 {% endblock %}

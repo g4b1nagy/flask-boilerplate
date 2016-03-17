@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from authomatic import Authomatic
 from flask import Flask
 from flask.ext.assets import Environment

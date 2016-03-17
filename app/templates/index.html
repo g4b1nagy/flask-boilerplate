@@ -1,24 +1,24 @@
 {% extends 'base.html' %}
 {% block title %}TITLE{% endblock %}
 {% block content %}
-  <div class="page-header">
-    <h1>Simple silly flask app</h1>
-  </div>
-  {% if name %}
-    <p class="lead">Hello, {{ name }}! Are you impressed now?</p>
-  {% else %}
-    <p class="lead">Enter your name below and witness the magic</p>
-    <form class="form-inline" method="POST">
-      {{ form.csrf_token }}
-      <div class="form-group {% if form.name.errors %}has-error{% endif %}">
-        {{ form.name.label(class='sr-only') }}
-        {{ form.name(class='form-control', placeholder=form.name.description) }}
-        {% for error in form.name.errors %}
-          <p class="help-block">{{ error }}</p>
-        {% endfor %}
-      </div>
-      <button type="submit" class="btn btn-primary" style="vertical-align: top;">Amaze me</button>
-    </form>
-  {% endif %}
-  <p style="margin-top: 64px;">Psst, don't forget to check out the <a href="{{ url_for('secret') }}">secret page</a>.</p>
+    <div class="page-header">
+        <h1>Simple silly flask app</h1>
+    </div>
+    {% if name %}
+        <p class="lead">Hello, {{ name }}! Are you impressed now?</p>
+    {% else %}
+        <p class="lead">Enter your name below and witness the magic</p>
+        <form class="form-inline" method="POST">
+            {{ form.csrf_token }}
+            <div class="form-group {% if form.name.errors %}has-error{% endif %}">
+                {{ form.name.label(class='sr-only') }}
+                {{ form.name(class='form-control', placeholder=form.name.description) }}
+                {% for error in form.name.errors %}
+                    <p class="help-block">{{ error }}</p>
+                {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary" style="vertical-align: top;">Amaze me</button>
+        </form>
+    {% endif %}
+    <p style="margin-top: 64px;">Psst, don't forget to check out the <a href="{{ url_for('secret') }}">secret page</a>.</p>
 {% endblock %}
