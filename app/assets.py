@@ -1,4 +1,4 @@
-from flask.ext.assets import Bundle
+from flask_assets import Bundle
 
 
 less = Bundle(
@@ -16,7 +16,7 @@ css = Bundle(
 )
 
 js = Bundle(
-    'js/jquery-2.2.1.min.js',
+    'js/jquery-3.2.1.min.js',
     'js/bootstrap.min.js',
     'js/script.js',
     filters='jsmin',

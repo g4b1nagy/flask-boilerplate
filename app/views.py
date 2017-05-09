@@ -1,6 +1,6 @@
 from authomatic.adapters import WerkzeugAdapter
 from flask import flash, make_response, redirect, render_template, request, session, url_for
-from flask.ext.login import login_required, login_user, logout_user
+from flask_login import login_required, login_user, logout_user
 
 from app import app, authomatic, db, login_manager
 from .forms import MyForm

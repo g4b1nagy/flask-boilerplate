@@ -1,8 +1,8 @@
 from authomatic import Authomatic
 from flask import Flask
-from flask.ext.assets import Environment
-from flask.ext.login import LoginManager
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_assets import Environment
+from flask_login import LoginManager
+from flask_sqlalchemy import SQLAlchemy
 
 from .assets import css, js
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-from flask.ext.assets import ManageAssets
-from flask.ext.script import Manager
+from flask_assets import ManageAssets
+from flask_script import Manager
 
 from app import app, assets, db
 from app.models import User
