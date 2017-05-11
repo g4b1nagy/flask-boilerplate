@@ -26,4 +26,8 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
+app.jinja_env.trim_blocks = True
+app.jinja_env.lstrip_blocks = True
+
+
 from app import views
